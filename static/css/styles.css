@@ -1,0 +1,118 @@
+/* Base Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Clean font choice */
+    background-color: #f7f7f7; /* Light gray background */
+    color: #333; /* Dark text */
+}
+
+/* Header Styles */
+header {
+    background-color: #002147; /* Dark Navy */
+    color: #FFFFFF; /* Crisp White */
+    padding: 20px;
+    text-align: center;
+}
+
+/* Navigation Styles */
+nav {
+    margin: 20px 0;
+}
+
+nav a {
+    color: #FFD700; /* Soft Gold */
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px 15px; /* Added padding for better click area */
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s; /* Smooth transition for color */
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Slightly transparent white */
+    color: #FFD700; /* Maintain soft gold color on hover */
+}
+
+/* Main Content Styles */
+main {
+    padding: 20px;
+    max-width: 600px; /* Center the main content */
+    margin: auto;
+}
+
+/* Heading Styles */
+h1, h2 {
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 2.5em; /* Increased size for main heading */
+}
+
+h2 {
+    font-size: 1.8em; /* Increased size for secondary heading */
+}
+
+/* Form Input Styles */
+input[type="text"], 
+input[type="email"], 
+input[type="password"], 
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px;
+    box-sizing: border-box; /* Ensure padding does not affect width */
+}
+
+/* Button Styles */
+input[type="submit"], 
+button {
+    background-color: #FF6F61; /* Muted Coral */
+    color: white;
+    border: none;
+    padding: 10px 15px; /* Adjusted padding for a better button size */
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-size: 1em; /* Consistent button text size */
+}
+
+/* Button Hover Effects */
+input[type="submit"]:hover, 
+button:hover {
+    background-color: #FF2B4A; /* Darker coral on hover */
+}
+
+/* Flash Message Styles */
+.flash {
+    background-color: #FF6F61; /* Muted Coral */
+    color: white;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    display: none; /* Initially hidden; will show through JS */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    nav a {
+        display: block; /* Stack links on smaller screens */
+        margin: 10px 0; /* Adjust margin for mobile layout */
+    }
+    
+    main {
+        padding: 10px; /* Less padding for smaller screens */
+    }
+
+    h1 {
+        font-size: 2em; /* Smaller heading size for mobile */
+    }
+
+    h2 {
+        font-size: 1.5em; /* Smaller secondary heading size for mobile */
+    }
+}
