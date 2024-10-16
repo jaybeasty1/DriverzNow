@@ -16,9 +16,7 @@
         }
 
         body {
-            background-image: url('/static/images/skyline.png'); /* Use relative path */
-            background-size: cover;
-            background-position: center;
+            background-color: #002147; /* Dark Navy */
             color: #FFFFFF; /* Crisp White */
             display: flex;
             flex-direction: column;
@@ -26,20 +24,10 @@
             align-items: center;
             min-height: 100vh;
             text-align: center;
-            position: relative;
-        }
-
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: rgba(0, 33, 71, 0.7); /* Dark Navy with transparency */
         }
 
         header {
-            background-color: rgba(255, 215, 0, 0.9); /* Soft Gold with transparency */
+            background-color: #FFD700; /* Soft Gold */
             width: 100%;
             padding: 20px;
             text-align: center;
@@ -57,8 +45,6 @@
         .hero-section {
             margin-top: 100px;
             padding: 40px 20px;
-            position: relative;
-            z-index: 1; /* Ensure text is above overlay */
         }
 
         .hero-section h2 {
@@ -90,7 +76,7 @@
         }
 
         footer {
-            background-color: rgba(255, 215, 0, 0.9); /* Soft Gold with transparency */
+            background-color: #FFD700; /* Soft Gold */
             width: 100%;
             padding: 20px;
             position: fixed;
@@ -121,9 +107,6 @@
 </head>
 <body>
 
-    <!-- Overlay for better text visibility -->
-    <div class="overlay"></div>
-
     <!-- Header -->
     <header>
         <h1>Driverz</h1>
@@ -133,8 +116,8 @@
     <section class="hero-section">
         <h2>Your Journey Starts Here</h2>
         <p>Welcome to Driverz! Whether you're a rider looking for a smooth experience or a driver ready to take on the road, we've got you covered. Join us today!</p>
-        <button class="btn" onclick="window.location.href='/signup';">Sign Up Now</button>
-        <button class="btn" onclick="window.location.href='/login';">Log In</button>
+        <button class="btn" onclick="window.location.href='signup.html';">Sign Up Now</button>
+        <button class="btn" onclick="window.location.href='login.html';">Log In</button>
     </section>
 
     <!-- Footer -->
