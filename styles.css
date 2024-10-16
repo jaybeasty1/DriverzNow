@@ -1,13 +1,14 @@
-/* Base Styles (from style.css, kept as is) */
+/* Base Styles */
 body {
     margin: 0;
     padding: 0;
     font-family: 'Roboto', sans-serif; /* Choose your preferred font */
-    background-color: #f7f7f7;
+    background: url('/static/images/skyline.png') no-repeat center center fixed; /* Background image */
+    background-size: cover;
     color: #333;
 }
 
-/* Header Styles (kept from style.css) */
+/* Header Styles */
 header {
     background-color: #002147;
     color: #FFFFFF;
@@ -15,7 +16,7 @@ header {
     text-align: center;
 }
 
-/* Keep these navigation styles from style.css */
+/* Navigation Styles */
 nav a {
     color: #FFD700;
     text-decoration: none;
@@ -30,7 +31,7 @@ nav a:hover {
     color: #FFD700;
 }
 
-/* Form Styles (keep from style.css, but remove duplicates with main.css) */
+/* Form Styles */
 input[type="text"],
 input[type="email"],
 input[type="password"],
@@ -43,7 +44,7 @@ textarea {
     box-sizing: border-box;
 }
 
-input[type="submit"], 
+input[type="submit"],
 button {
     background-color: #FF6F61;
     color: white;
@@ -54,18 +55,18 @@ button {
     transition: background-color 0.3s;
 }
 
-input[type="submit"]:hover, 
+input[type="submit"]:hover,
 button:hover {
     background-color: #FF2B4A;
 }
 
-/* Responsive styles (kept from style.css) */
+/* Responsive Styles */
 @media (max-width: 600px) {
     nav a {
         display: block;
         margin: 10px 0;
     }
-    
+
     main {
         padding: 10px;
     }
@@ -79,9 +80,7 @@ button:hover {
     }
 }
 
-/* Add new classes from main.css below, avoiding any duplication */
-
-/* Utility Classes (from main.css) */
+/* Utility Classes */
 .container {
     width: 90%;
     max-width: 1200px;
@@ -103,7 +102,7 @@ button:hover {
     margin-bottom: 20px;
 }
 
-/* Footer styles (new addition from main.css) */
+/* Footer Styles */
 footer {
     background-color: #FFD700;
     padding: 20px;
