@@ -1,0 +1,119 @@
+/* Base Styles (from style.css, kept as is) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; /* Choose your preferred font */
+    background-color: #f7f7f7;
+    color: #333;
+}
+
+/* Header Styles (kept from style.css) */
+header {
+    background-color: #002147;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Keep these navigation styles from style.css */
+nav a {
+    color: #FFD700;
+    text-decoration: none;
+    margin: 0 15px;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFD700;
+}
+
+/* Form Styles (keep from style.css, but remove duplicates with main.css) */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="submit"], 
+button {
+    background-color: #FF6F61;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+input[type="submit"]:hover, 
+button:hover {
+    background-color: #FF2B4A;
+}
+
+/* Responsive styles (kept from style.css) */
+@media (max-width: 600px) {
+    nav a {
+        display: block;
+        margin: 10px 0;
+    }
+    
+    main {
+        padding: 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    h2 {
+        font-size: 1.5em;
+    }
+}
+
+/* Add new classes from main.css below, avoiding any duplication */
+
+/* Utility Classes (from main.css) */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+/* Footer styles (new addition from main.css) */
+footer {
+    background-color: #FFD700;
+    padding: 20px;
+    text-align: center;
+    color: #002147;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    font-size: 1rem;
+}
