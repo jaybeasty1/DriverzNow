@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Driverz - Payment</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #002147; /* Dark Navy */
+            color: #FFFFFF; /* Crisp White */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .payment-container {
+            background-color: #FFFFFF; /* White background for the form */
+            color: #002147; /* Dark Navy text */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
+        }
+
+        .payment-container h2 {
+            color: #FFD700; /* Soft Gold */
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .payment-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .payment-container input {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .payment-container input[type="submit"] {
+            background-color: #FF6F61; /* Muted Coral */
+            color: #FFFFFF;
+            border: none;
+            padding: 15px;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .payment-container input[type="submit"]:hover {
+            background-color: #002147; /* Dark Navy */
+        }
+
+        .payment-container a {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            color: #FF6F61; /* Muted Coral */
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .payment-container a:hover {
+            color: #FFD700; /* Soft Gold */
+        }
+
+        @media (max-width: 768px) {
+            .payment-container {
+                width: 90%;
+            }
+
+            .payment-container h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="payment-container">
+        <h2>Payment Details</h2>
+
+        <!-- Payment Form -->
+        <form id="payment-form">
+            <div id="card-element"><!-- Stripe will insert the card element here --></div>
+            <div id="card-errors" role="alert"></div>
+            <input type="submit" value="Pay Now">
+        </form>
+
+        <a href="/dashboard">Cancel and Return to Dashboard</a>
+    </div>
+
+    <!-- Include Stripe.js -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Initialize Stripe
+        const stripe = Stripe('pk_live_51Q7miU2NOYwHNPf9bXxpnjNlc1fNhu3cAke6Gr4yuMrNzYsY64bZp6ZnXShLWFwWOJfvcQbVtP5jEE1TCnsxmqjL00URWzYtRY');
+
+        // Initialize Elements
+        const elements = stripe.elements();
+        const card = elements.create('card');
+        card.mount('#card-element');
+
+        // Handle form submission
+        const form = document.getElementById('payment-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                    // Display error
+                    const errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    // Send the token to your server
+                    fetch('/process_payment', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({ token: result.token.id }),
+                    }).then(response => {
+                        // Handle server response
+                    });
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
