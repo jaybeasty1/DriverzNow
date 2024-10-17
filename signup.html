@@ -88,6 +88,20 @@
         .return-home {
             margin-top: 10px;
         }
+
+        .home-button {
+            background-color: #FFD700; /* Soft Gold */
+            color: #002147; /* Dark Navy */
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: #FFC107; /* Lighter gold on hover */
+        }
     </style>
 </head>
 <body>
@@ -115,11 +129,7 @@
     
     <div class="navigation">
         <a href="login.html">Login</a>
-        <div class="return-home">
-            <a href="index.html">
-                <button>Return to Home</button>
-            </a>
-        </div>
+        <button class="home-button" onclick="window.location.href='index.html';">Return to Home</button>
     </div>
 
     <script>
