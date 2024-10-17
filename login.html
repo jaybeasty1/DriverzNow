@@ -22,10 +22,8 @@
             color: #FFFFFF;
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             min-height: 100vh;
-            text-align: center;
             position: relative;
         }
 
@@ -45,7 +43,6 @@
             text-align: center;
             position: fixed;
             top: 0;
-            left: 0;
             z-index: 1000;
         }
 
@@ -57,11 +54,10 @@
         .login-container {
             margin-top: 100px;
             padding: 40px 20px;
-            position: relative;
-            z-index: 1;
             background-color: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
             width: 300px;
+            z-index: 1;
         }
 
         .login-container h2 {
@@ -114,6 +110,7 @@
             margin: 20px 0;
             width: 80%;
             max-width: 800px;
+            z-index: 1;
         }
 
         .info-section h3 {
@@ -154,7 +151,7 @@
     <!-- Login Form -->
     <div class="login-container">
         <h2>Login to Driverz</h2>
-        <form action="/login" method="POST"> <!-- Change action to your login endpoint -->
+        <form action="/login" method="POST">
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
             <input type="submit" value="Login">
