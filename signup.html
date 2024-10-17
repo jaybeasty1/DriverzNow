@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!-- templates/sign_up.html -->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -69,21 +69,6 @@
             font-weight: bold;
             color: #FFD700; /* Soft Gold */
         }
-
-        .navigation {
-            margin-top: 20px;
-            text-align: center;
-        }
-
-        .navigation a {
-            color: #FFD700; /* Soft Gold */
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        .navigation a:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
@@ -109,11 +94,6 @@
     </form>
     <p id="signupMessage"></p>
     
-    <div class="navigation">
-        <a href="index.html">Home</a>
-        <a href="login.html">Login</a>
-    </div>
-
     <script>
         document.getElementById('signupForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent default form submission
