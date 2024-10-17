@@ -19,9 +19,22 @@
             background-color: #002147; /* Dark Navy */
             color: #FFFFFF; /* Crisp White */
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
+            position: relative; /* Added for positioning footer */
+        }
+
+        .header {
+            width: 100%;
+            background-color: #FFD700; /* Soft Gold */
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 5px solid #FFD700; /* Gold border at the bottom */
+            position: absolute;
+            top: 0;
+            left: 0;
         }
 
         .login-container {
@@ -33,6 +46,7 @@
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
             width: 400px;
             max-width: 100%;
+            margin-top: 80px; /* Space for header */
         }
 
         .login-container h2 {
@@ -97,6 +111,15 @@
             margin-right: 10px;
         }
 
+        .footer {
+            width: 100%;
+            text-align: center;
+            position: absolute;
+            bottom: 10px;
+            left: 0;
+            color: #FFD700; /* Soft Gold */
+        }
+
         @media (max-width: 768px) {
             .login-container {
                 width: 90%;
@@ -109,6 +132,10 @@
     </style>
 </head>
 <body>
+
+    <div class="header">
+        <h1>Driverz</h1>
+    </div>
 
     <div class="login-container">
         <h2>Login to Driverz</h2>
@@ -131,6 +158,10 @@
 
         <a href="signup.html">Don't have an account? Sign Up</a>
         <a href="forgot_password.html">Forgot your password?</a>
+    </div>
+
+    <div class="footer">
+        © 2024 Driverz. All Rights Reserved.
     </div>
 
 </body>
