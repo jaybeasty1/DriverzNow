@@ -3,125 +3,134 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - Driverz App</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Driverz - Login</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body {
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+        }
+
+        body {
             background-color: #002147; /* Dark Navy */
             color: #FFFFFF; /* Crisp White */
             display: flex;
-            flex-direction: column;
-            align-items: center;
             justify-content: center;
-            height: 100vh;
-            margin: 0;
+            align-items: center;
+            min-height: 100vh;
         }
 
-        h1 {
-            margin-bottom: 20px;
-            color: #FFD700; /* Soft Gold */
-        }
-
-        form {
-            background-color: #FFFFFF; /* White background */
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            max-width: 400px;
-            width: 100%;
-        }
-
-        label {
-            margin-top: 10px;
-            display: block;
+        .login-container {
+            background-color: #FFFFFF; /* White background for form */
             color: #002147; /* Dark Navy text */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            width: 400px;
+            max-width: 100%;
         }
 
-        input[type="text"],
-        input[type="email"],
-        input[type="password"],
-        select {
+        .login-container h2 {
+            color: #FFD700; /* Soft Gold */
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .login-container label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 1rem;
+        }
+
+        .login-container input[type="email"],
+        .login-container input[type="password"] {
             width: 100%;
-            padding: 10px;
-            margin: 10px 0;
-            border: 1px solid #ccc;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #ddd;
             border-radius: 5px;
+            font-size: 1rem;
         }
 
-        button {
+        .login-container input[type="submit"] {
             background-color: #FF6F61; /* Muted Coral */
-            color: white;
+            color: #FFFFFF;
             border: none;
-            padding: 10px;
+            padding: 15px;
+            font-size: 1.2rem;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
-            width: 100%;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Full width for submit button */
         }
 
-        button:hover {
-            background-color: #FF2B4A; /* Darker coral on hover */
+        .login-container input[type="submit"]:hover {
+            background-color: #002147; /* Dark Navy */
         }
 
-        #signupMessage {
+        .login-container a {
+            display: block;
+            text-align: center;
             margin-top: 20px;
-            font-weight: bold;
+            color: #FF6F61; /* Muted Coral */
+            text-decoration: none;
+            font-size: 1rem;
+        }
+
+        .login-container a:hover {
             color: #FFD700; /* Soft Gold */
+        }
+
+        .remember-me {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .remember-me input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        @media (max-width: 768px) {
+            .login-container {
+                width: 90%;
+            }
+
+            .login-container h2 {
+                font-size: 1.5rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>Sign Up</h1>
-    <form id="signupForm">
-        <label for="name">Name:</label>
-        <input type="text" id="name" name="name" required>
 
-        <label for="email">Email:</label>
-        <input type="email" id="email" name="email" required>
+    <div class="login-container">
+        <h2>Login to Driverz</h2>
 
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
+        <!-- Login Form -->
+        <form action="#" method="POST"> <!-- Change action to '#' or to a valid endpoint -->
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
 
-        <label for="role">Role:</label>
-        <select id="role" name="role" required>
-            <option value="" disabled selected>Select your role</option>
-            <option value="rider">Rider</option>
-            <option value="driver">Driver</option>
-        </select>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
 
-        <button type="submit">Sign Up</button>
-    </form>
-    <p id="signupMessage"></p>
-    
-    <script>
-        document.getElementById('signupForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent default form submission
-            
-            const formData = new FormData(this);
-            const data = Object.fromEntries(formData.entries());
-            
-            fetch('/signup', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(data),
-            })
-            .then(response => {
-                if (!response.ok) {
-                    throw new Error('Network response was not ok ' + response.statusText);
-                }
-                return response.json();
-            })
-            .then(data => {
-                document.getElementById('signupMessage').innerText = data.error || "Signup successful!";
-            })
-            .catch(error => {
-                console.error('Error:', error);
-                document.getElementById('signupMessage').innerText = "Signup failed. Please try again.";
-            });
-        });
-    </script>
+            <div class="remember-me">
+                <input type="checkbox" id="remember" name="remember">
+                <label for="remember">Remember Me</label>
+            </div>
+
+            <input type="submit" value="Login">
+        </form>
+
+        <a href="signup.html">Don't have an account? Sign Up</a>
+        <a href="forgot_password.html">Forgot your password?</a>
+    </div>
+
 </body>
 </html>
