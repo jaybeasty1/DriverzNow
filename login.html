@@ -54,24 +54,24 @@
             font-size: 2.2rem;
         }
 
-        .form-container {
+        .login-container {
             margin-top: 100px;
             padding: 40px 20px;
             position: relative;
             z-index: 1;
-            background-color: rgba(0, 0, 0, 0.5); /* Dark background for form */
+            background-color: rgba(0, 0, 0, 0.5);
             border-radius: 10px;
             width: 300px;
         }
 
-        .form-container h2 {
+        .login-container h2 {
             font-size: 2rem;
             margin-bottom: 20px;
             color: #FFD700;
         }
 
-        .form-container input[type="email"],
-        .form-container input[type="password"] {
+        .login-container input[type="email"],
+        .login-container input[type="password"] {
             width: 100%;
             padding: 10px;
             margin: 10px 0;
@@ -79,7 +79,7 @@
             border-radius: 5px;
         }
 
-        .form-container input[type="submit"] {
+        .login-container input[type="submit"] {
             background-color: #FF6F61;
             color: white;
             border: none;
@@ -90,7 +90,7 @@
             width: 100%;
         }
 
-        .form-container input[type="submit"]:hover {
+        .login-container input[type="submit"]:hover {
             background-color: #FF2B4A;
         }
 
@@ -105,6 +105,25 @@
 
         .navigation a:hover {
             text-decoration: underline;
+        }
+
+        .info-section {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 20px;
+            border-radius: 10px;
+            margin: 20px 0;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .info-section h3 {
+            color: #FFD700;
+            margin-bottom: 10px;
+        }
+
+        .info-section p {
+            margin-bottom: 10px;
+            color: #FFFFFF;
         }
 
         footer {
@@ -133,11 +152,11 @@
     </header>
 
     <!-- Login Form -->
-    <div class="form-container">
-        <h2>Login</h2>
+    <div class="login-container">
+        <h2>Login to Driverz</h2>
         <form action="/login" method="POST"> <!-- Change action to your login endpoint -->
-            <input type="email" name="email" placeholder="Your Email" required>
-            <input type="password" name="password" placeholder="Your Password" required>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
             <input type="submit" value="Login">
         </form>
         <div class="navigation">
@@ -145,6 +164,23 @@
             <a href="forgot_password.html">Forgot your password?</a>
         </div>
     </div>
+
+    <!-- Information Section -->
+    <section class="info-section">
+        <h3>Welcome Back!</h3>
+        <p>Logging in to Driverz allows you to manage your rides easily and access exclusive offers.</p>
+        
+        <h3>Why Log In?</h3>
+        <ul>
+            <li>View your ride history and manage bookings.</li>
+            <li>Receive personalized offers tailored to your needs.</li>
+            <li>Quickly access support and resources.</li>
+            <li>Enjoy a seamless ride experience with saved preferences.</li>
+        </ul>
+
+        <h3>Need Assistance?</h3>
+        <p>If you encounter any issues while logging in, feel free to reach out to our support team for help.</p>
+    </section>
 
     <!-- Footer -->
     <footer>
