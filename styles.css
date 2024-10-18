@@ -60,6 +60,37 @@ button:hover {
     background-color: #FF2B4A;
 }
 
+/* Image Styles */
+.image-container {
+    position: relative;
+    width: 100%;
+    margin-top: 100px; /* Space for the header */
+}
+
+.side-image {
+    width: 200px; /* Adjust size as needed */
+    height: auto; /* Maintain aspect ratio */
+    position: absolute;
+}
+
+.left-image {
+    left: 0;
+    top: 20%; /* Adjust positioning */
+    transform: translateY(-20%); /* Stagger effect */
+}
+
+.center-image {
+    display: block;
+    margin: 0 auto; /* Center the middle image */
+    width: 50%; /* Width of the center image */
+}
+
+.right-image {
+    right: 0;
+    top: 40%; /* Adjust positioning */
+    transform: translateY(-20%); /* Stagger effect */
+}
+
 /* Responsive Styles */
 @media (max-width: 600px) {
     nav a {
@@ -77,6 +108,14 @@ button:hover {
 
     h2 {
         font-size: 1.5em;
+    }
+
+    .side-image {
+        width: 100px; /* Smaller size for mobile */
+    }
+
+    .center-image {
+        width: 80%; /* Adjust size for mobile */
     }
 }
 
