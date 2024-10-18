@@ -129,8 +129,8 @@
         }
 
         .image-section {
-            position: absolute; /* Position it absolutely */
-            right: 34px; /* Adjusted to move 3 inches to the left */
+            position: absolute;
+            right: 30px; /* Adjusted to move 4 inches to the left */
             top: 450px; /* Keep the same top position */
             display: flex;
             flex-direction: column;
@@ -138,7 +138,7 @@
         }
 
         .image-section img {
-            width: 250px; /* Increase width */
+            width: 300px; /* Increased width */
             height: auto; /* Maintain aspect ratio */
             margin-bottom: 20px; /* Space between images */
         }
@@ -230,3 +230,17 @@
     <section id="contact" class="info-section">
         <h3>Contact Us</h3>
         <form action="/contact" method="POST">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 DriverzNow. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>
