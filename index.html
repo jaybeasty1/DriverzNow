@@ -145,22 +145,10 @@
 
         .left-image {
             position: absolute;
-            left: 288px; /* Move 3 inches to the right */
-            top: 20%; /* Adjust positioning */
-            transform: translateY(-20%); /* Stagger effect */
-        }
-
-        .center-image {
-            display: block;
-            margin: 0 auto; /* Center the middle image */
-            width: 50%; /* Width of the center image */
-        }
-
-        .right-image {
-            position: absolute;
-            right: 0;
-            top: 40%; /* Adjust positioning */
-            transform: translateY(-20%); /* Stagger effect */
+            left: 50px; /* Adjust as needed */
+            top: 450px; /* Adjust for vertical positioning */
+            width: 400px; /* Set the size */
+            height: auto; /* Maintain aspect ratio */
         }
 
         @media (max-width: 768px) {
@@ -203,12 +191,15 @@
         <button class="btn" onclick="window.location.href='login.html';">Log In</button>
     </section>
 
-    <!-- Image Section -->
+    <!-- Image Section (Right Side) -->
     <div class="image-section">
-        <img class="left-image" src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/rider-experience.jpg" alt="Rider Experience">
-        <img class="center-image" src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/driver-service.jpg" alt="Driver Service">
-        <img class="right-image" src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/hero-image.jpg" alt="Hero Image">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/rider-experience.jpg" alt="Rider Experience">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/driver-service.jpg" alt="Driver Service">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/hero-image.jpg" alt="Hero Image">
     </div>
+
+    <!-- Left Image Section -->
+    <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/display-ride.jpg" alt="Display Ride" class="left-image">
 
     <!-- CTA Section -->
     <section class="cta-section">
