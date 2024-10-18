@@ -52,6 +52,11 @@
             font-size: 2.2rem;
         }
 
+        header a {
+            color: #002147;
+            text-decoration: none;
+        }
+
         .login-container {
             margin-top: 100px;
             padding: 40px 20px;
@@ -82,7 +87,7 @@
         .login-container input[type="email"],
         .login-container input[type="password"] {
             width: 100%;
-            padding: 10px 10px 10px 40px; /* Add padding for icon */
+            padding: 10px 10px 10px 40px;
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
@@ -91,8 +96,8 @@
 
         .login-container input[type="email"]:focus,
         .login-container input[type="password"]:focus {
-            border-color: #FFD700; /* Change border color on focus */
-            outline: none; /* Remove default outline */
+            border-color: #FFD700;
+            outline: none;
         }
 
         .login-container input[type="submit"] {
@@ -142,7 +147,7 @@
 
         .social-button {
             width: 100%;
-            background-color: #4285F4; /* Google Blue */
+            background-color: #4285F4;
             color: white;
             padding: 10px;
             border: none;
@@ -153,7 +158,7 @@
         }
 
         .social-button:hover {
-            background-color: #357AE8; /* Darker shade for hover */
+            background-color: #357AE8;
         }
 
         .info-section {
@@ -193,11 +198,11 @@
 
         @media (max-width: 600px) {
             .login-container {
-                width: 90%; /* Use a larger percentage for smaller screens */
+                width: 90%;
             }
 
             .info-section {
-                width: 90%; /* Adjust the info section width as well */
+                width: 90%;
             }
         }
     </style>
@@ -208,7 +213,7 @@
 
     <!-- Header -->
     <header>
-        <h1>DriverzNow</h1>
+        <h1><a href="index.html" style="color: #002147; text-decoration: none;">DriverzNow</a></h1>
     </header>
 
     <!-- Login Form -->
