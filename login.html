@@ -103,6 +103,11 @@
             text-decoration: underline;
         }
 
+        .role-selection {
+            margin: 15px 0;
+            color: #FFD700;
+        }
+
         .info-section {
             background-color: rgba(0, 0, 0, 0.5);
             padding: 20px;
@@ -154,6 +159,18 @@
         <form action="/login" method="POST">
             <input type="email" id="email" name="email" placeholder="Enter your email" required>
             <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <div class="role-selection">
+                <label>
+                    <input type="radio" name="role" value="rider" required>
+                    Rider
+                </label>
+                <label>
+                    <input type="radio" name="role" value="driver" required>
+                    Driver
+                </label>
+            </div>
+
             <input type="submit" value="Login">
         </form>
         <div class="navigation">
