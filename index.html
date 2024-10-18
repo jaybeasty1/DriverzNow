@@ -90,35 +90,28 @@
             background-color: #002147; /* Dark Navy */
         }
 
-        .content {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start; /* Align items to the start (top) */
-            width: 100%;
-            margin-top: 20px; /* Space for the header */
+        .cta-section {
+            margin: 20px 0;
         }
 
-        .text-section {
-            max-width: 600px; /* Center text section */
-            padding: 20px;
+        .info-section {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px 0;
+            width: 80%;
+            max-width: 800px;
         }
 
-        .image-container {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between; /* Space images vertically */
-            margin-left: 20px; /* Space between text and images */
+        .info-section h3 {
+            color: #FFD700;
+            margin-bottom: 15px;
         }
 
-        .left-image {
-            width: 150px; /* Image width */
-            height: auto; /* Maintain aspect ratio */
-            margin-bottom: 20px; /* Space between images */
-        }
-
-        .right-image {
-            width: 150px; /* Image width */
-            height: auto; /* Maintain aspect ratio */
+        .info-section p {
+            margin-bottom: 15px;
+            color: #FFFFFF;
+            font-size: 1rem;
         }
 
         footer {
@@ -141,7 +134,8 @@
                 font-size: 2rem;
             }
 
-            .hero-section p {
+            .hero-section p,
+            .info-section p {
                 font-size: 1rem;
             }
 
@@ -163,31 +157,19 @@
         </nav>
     </header>
 
-    <!-- Main Content -->
-    <div class="content">
-        <!-- Text Section -->
-        <div class="text-section">
-            <section class="hero-section">
-                <h2>Your Journey Starts Here</h2>
-                <p>Welcome to DriverzNow! Whether you're a rider looking for a smooth experience or a driver ready to take on the road, we've got you covered. Join us today!</p>
-                <button class="btn" onclick="window.location.href='signup.html';">Sign Up Now</button>
-                <button class="btn" onclick="window.location.href='login.html';">Log In</button>
-            </section>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h2>Your Journey Starts Here</h2>
+        <p>Welcome to DriverzNow! Whether you're a rider looking for a smooth experience or a driver ready to take on the road, we've got you covered. Join us today!</p>
+        <button class="btn" onclick="window.location.href='signup.html';">Sign Up Now</button>
+        <button class="btn" onclick="window.location.href='login.html';">Log In</button>
+    </section>
 
-            <!-- CTA Section -->
-            <section class="cta-section">
-                <h2>Ready to Ride?</h2>
-                <button class="btn" onclick="window.location.href='signup.html';">Get Started</button>
-            </section>
-        </div>
-
-        <!-- Image Section -->
-        <div class="image-container">
-            <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/rider-experience.jpg" class="left-image" alt="Rider Experience">
-            <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/driver-service.jpg" class="left-image" alt="Driver Service">
-            <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/hero-image.jpg" class="right-image" alt="Hero Image">
-        </div>
-    </div>
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Ride?</h2>
+        <button class="btn" onclick="window.location.href='signup.html';">Get Started</button>
+    </section>
 
     <!-- Our Services Section -->
     <section id="services" class="info-section">
