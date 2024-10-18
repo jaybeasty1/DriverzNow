@@ -61,22 +61,32 @@ button:hover {
 }
 
 /* Image Styles */
-.image-container {
-    position: relative;
-    width: 100%;
-    margin-top: 100px; /* Space for the header */
+.image-section {
+    position: absolute;
+    right: 150px; /* Adjusted position */
+    top: 450px; /* Keep the same top position */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end; /* Align images to the right */
 }
 
-.side-image {
-    width: 200px; /* Adjust size as needed */
+.image-section img {
+    width: 400px; /* Increased image width */
     height: auto; /* Maintain aspect ratio */
-    position: absolute;
+    margin-bottom: 20px; /* Space between images */
 }
 
 .left-image {
-    left: 0;
+    position: absolute;
+    left: 288px; /* Move 3 inches to the right */
     top: 20%; /* Adjust positioning */
     transform: translateY(-20%); /* Stagger effect */
+}
+
+.new-image {
+    width: 400px; /* Adjust as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-bottom: 20px; /* Space between images */
 }
 
 .center-image {
@@ -86,6 +96,7 @@ button:hover {
 }
 
 .right-image {
+    position: absolute;
     right: 0;
     top: 40%; /* Adjust positioning */
     transform: translateY(-20%); /* Stagger effect */
@@ -108,6 +119,10 @@ button:hover {
 
     h2 {
         font-size: 1.5em;
+    }
+
+    .image-section img {
+        width: 100%; /* Adjust size for mobile */
     }
 
     .side-image {
