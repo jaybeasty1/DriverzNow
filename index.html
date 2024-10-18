@@ -8,32 +8,146 @@
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        /* Include your existing styles here... */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #002147; /* Dark Navy */
+            color: #FFFFFF; /* Crisp White */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            text-align: center;
+        }
+
+        header {
+            background-color: #FFD700; /* Soft Gold */
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 1000;
+        }
+
+        header h1 {
+            color: #002147; /* Dark Navy */
+            font-size: 2.2rem;
+        }
+
+        nav {
+            margin-top: 10px;
+        }
+
+        nav a {
+            color: #002147;
+            margin: 0 15px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        .hero-section {
+            margin-top: 100px;
+            padding: 40px 20px;
+        }
+
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #FFD700; /* Soft Gold */
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #FFFFFF; /* Crisp White */
+        }
+
+        .hero-section .btn {
+            background-color: #FF6F61; /* Muted Coral */
+            color: #FFFFFF;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px; /* Add some space between buttons */
+        }
+
+        .hero-section .btn:hover {
+            background-color: #002147; /* Dark Navy */
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the start (top) */
+            width: 100%;
+            margin-top: 20px; /* Space for the header */
+        }
+
+        .text-section {
+            max-width: 600px; /* Center text section */
+            padding: 20px;
+        }
 
         .image-container {
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start; /* Align images to the top */
-            margin-top: 40px;
-            width: 600px; /* Fixed width for images */
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .left-images {
-            display: flex;
-            flex-direction: column; /* Stack images vertically */
-            gap: 20px; /* Space between the images */
+            flex-direction: column;
+            justify-content: space-between; /* Space images vertically */
+            margin-left: 20px; /* Space between text and images */
         }
 
         .left-image {
-            width: 150px; /* Adjust size */
-            height: auto;
+            width: 150px; /* Image width */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Space between images */
         }
 
         .right-image {
-            width: 150px; /* Same width for consistency */
-            height: auto;
+            width: 150px; /* Image width */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        footer {
+            background-color: #FFD700; /* Soft Gold */
+            width: 100%;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: #002147;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .hero-section h2 {
+                font-size: 2rem;
+            }
+
+            .hero-section p {
+                font-size: 1rem;
+            }
+
+            .hero-section .btn {
+                font-size: 1rem;
+            }
         }
     </style>
 </head>
@@ -49,28 +163,31 @@
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <h2>Your Journey Starts Here</h2>
-        <p>Welcome to DriverzNow! Whether you're a rider looking for a smooth experience or a driver ready to take on the road, we've got you covered. Join us today!</p>
-        <button class="btn" onclick="window.location.href='signup.html';">Sign Up Now</button>
-        <button class="btn" onclick="window.location.href='login.html';">Log In</button>
-    </section>
+    <!-- Main Content -->
+    <div class="content">
+        <!-- Text Section -->
+        <div class="text-section">
+            <section class="hero-section">
+                <h2>Your Journey Starts Here</h2>
+                <p>Welcome to DriverzNow! Whether you're a rider looking for a smooth experience or a driver ready to take on the road, we've got you covered. Join us today!</p>
+                <button class="btn" onclick="window.location.href='signup.html';">Sign Up Now</button>
+                <button class="btn" onclick="window.location.href='login.html';">Log In</button>
+            </section>
 
-    <!-- Image Section -->
-    <div class="image-container">
-        <div class="left-images">
+            <!-- CTA Section -->
+            <section class="cta-section">
+                <h2>Ready to Ride?</h2>
+                <button class="btn" onclick="window.location.href='signup.html';">Get Started</button>
+            </section>
+        </div>
+
+        <!-- Image Section -->
+        <div class="image-container">
             <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/rider-experience.jpg" class="left-image" alt="Rider Experience">
             <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/driver-service.jpg" class="left-image" alt="Driver Service">
+            <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/hero-image.jpg" class="right-image" alt="Hero Image">
         </div>
-        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/hero-image.jpg" class="right-image" alt="Hero Image">
     </div>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>Ready to Ride?</h2>
-        <button class="btn" onclick="window.location.href='signup.html';">Get Started</button>
-    </section>
 
     <!-- Our Services Section -->
     <section id="services" class="info-section">
