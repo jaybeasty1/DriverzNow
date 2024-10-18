@@ -28,7 +28,7 @@
         header {
             background-color: #FFD700; /* Soft Gold */
             width: 100%;
-            padding: 20px;
+            padding: 15px;
             text-align: center;
             position: fixed;
             top: 0;
@@ -38,7 +38,7 @@
 
         header h1 {
             color: #002147; /* Dark Navy */
-            font-size: 2.2rem;
+            font-size: 1.8rem; /* Adjusted font size for better responsiveness */
         }
 
         nav {
@@ -47,7 +47,7 @@
 
         nav a {
             color: #002147;
-            margin: 0 15px;
+            margin: 0 10px; /* Reduced margin for better spacing */
             text-decoration: none;
             font-weight: 600;
         }
@@ -57,48 +57,45 @@
         }
 
         .hero-section {
-            margin-top: 100px;
-            padding: 40px 20px;
+            margin-top: 80px; /* Adjusted margin for header */
+            padding: 20px; /* Reduced padding for better spacing */
+            text-align: center; /* Center text */
         }
 
         .hero-section h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
+            font-size: 2rem; /* Adjusted for mobile */
+            margin-bottom: 15px;
             color: #FFD700; /* Soft Gold */
         }
 
         .hero-section p {
-            font-size: 1.2rem;
-            margin-bottom: 40px;
+            font-size: 1rem; /* Adjusted for mobile */
+            margin-bottom: 20px;
             color: #FFFFFF; /* Crisp White */
         }
 
         .hero-section .btn {
             background-color: #FF6F61; /* Muted Coral */
             color: #FFFFFF;
-            padding: 15px 30px;
+            padding: 10px 20px; /* Reduced padding */
             border: none;
             border-radius: 5px;
-            font-size: 1.2rem;
+            font-size: 1rem; /* Adjusted for mobile */
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin: 5px; /* Add some space between buttons */
+            margin: 5px;
         }
 
         .hero-section .btn:hover {
             background-color: #002147; /* Dark Navy */
         }
 
-        .cta-section {
-            margin: 20px 0;
-        }
-
         .info-section {
             background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-            padding: 40px;
+            padding: 20px;
             border-radius: 10px;
-            margin: 20px 0;
-            width: 80%;
+            margin: 20px;
+            width: 90%; /* Responsive width */
             max-width: 800px;
         }
 
@@ -110,13 +107,13 @@
         .info-section p {
             margin-bottom: 15px;
             color: #FFFFFF;
-            font-size: 1rem;
+            font-size: 0.9rem; /* Adjusted for mobile */
         }
 
         footer {
             background-color: #FFD700; /* Soft Gold */
             width: 100%;
-            padding: 20px;
+            padding: 15px;
             position: fixed;
             bottom: 0;
             left: 0;
@@ -125,73 +122,46 @@
 
         footer p {
             color: #002147;
-            font-size: 1rem;
+            font-size: 0.9rem; /* Adjusted for mobile */
         }
 
         .image-section {
-            position: absolute;
-            right: 150px; /* Adjusted position */
-            top: 450px; /* Keep the same top position */
             display: flex;
             flex-direction: column;
-            align-items: flex-end; /* Align images to the right */
+            align-items: center;
+            margin: 20px 0; /* Added margin for spacing */
         }
 
         .image-section img {
-            width: 400px; /* Increased image width */
+            width: 100%; /* Responsive width */
+            max-width: 400px; /* Maintain max size */
             height: auto; /* Maintain aspect ratio */
             margin-bottom: 20px; /* Space between images */
         }
 
         .left-image {
-            position: absolute;
-            left: 50px; /* Adjust as needed */
-            top: 450px; /* Adjust for vertical positioning */
-            width: 400px; /* Set the size */
+            width: 100%; /* Responsive width */
+            max-width: 400px; /* Maintain max size */
             height: auto; /* Maintain aspect ratio */
-        }
-
-        .new-images {
-            position: absolute;
-            left: 50px; /* Same left position as the left image */
-            top: 870px; /* Adjust as needed for vertical positioning */
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start; /* Align images to the left */
-        }
-
-        .new-images img {
-            width: 400px; /* Set the size */
-            height: auto; /* Maintain aspect ratio */
-            margin-top: 20px; /* Space between images */
+            margin: 20px 0; /* Added margin for spacing */
         }
 
         @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.5rem; /* Smaller header font */
+            }
+
             .hero-section h2 {
-                font-size: 2rem;
+                font-size: 1.8rem; /* Smaller hero font */
             }
 
             .hero-section p,
             .info-section p {
-                font-size: 1rem;
+                font-size: 0.9rem; /* Smaller paragraph font */
             }
 
             .hero-section .btn {
-                font-size: 1rem;
-            }
-
-            .image-section {
-                right: 10px; /* Adjust for smaller screens */
-            }
-
-            .left-image {
-                width: 100%; /* Adjust left image size for mobile */
-                top: 300px; /* Adjust vertical positioning for mobile */
-            }
-
-            .new-images {
-                left: 10px; /* Adjust for smaller screens */
-                top: 650px; /* Adjust for smaller screens */
+                font-size: 0.9rem; /* Smaller button font */
             }
         }
     </style>
@@ -216,7 +186,7 @@
         <button class="btn" onclick="window.location.href='login.html';">Log In</button>
     </section>
 
-    <!-- Image Section (Right Side) -->
+    <!-- Image Section -->
     <div class="image-section">
         <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/rider-experience.jpg" alt="Rider Experience">
         <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/driver-service.jpg" alt="Driver Service">
@@ -227,7 +197,7 @@
     <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/display-ride.jpg" alt="Display Ride" class="left-image">
 
     <!-- New Images Under the Left Image -->
-    <div class="new-images">
+    <div class="image-section">
         <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/back-end.jpg" alt="Back End">
         <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/family-enjoy.jpg" alt="Family Enjoy">
     </div>
