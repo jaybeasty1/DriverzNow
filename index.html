@@ -151,6 +151,21 @@
             height: auto; /* Maintain aspect ratio */
         }
 
+        .new-images {
+            position: absolute;
+            left: 50px; /* Same left position as the left image */
+            top: 870px; /* Adjust as needed for vertical positioning */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align images to the left */
+        }
+
+        .new-images img {
+            width: 400px; /* Set the size */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 20px; /* Space between images */
+        }
+
         @media (max-width: 768px) {
             .hero-section h2 {
                 font-size: 2rem;
@@ -167,6 +182,16 @@
 
             .image-section {
                 right: 10px; /* Adjust for smaller screens */
+            }
+
+            .left-image {
+                width: 100%; /* Adjust left image size for mobile */
+                top: 300px; /* Adjust vertical positioning for mobile */
+            }
+
+            .new-images {
+                left: 10px; /* Adjust for smaller screens */
+                top: 650px; /* Adjust for smaller screens */
             }
         }
     </style>
@@ -200,6 +225,12 @@
 
     <!-- Left Image Section -->
     <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/display-ride.jpg" alt="Display Ride" class="left-image">
+
+    <!-- New Images Under the Left Image -->
+    <div class="new-images">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/back-end.jpg" alt="Back End">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/family-enjoy.jpg" alt="Family Enjoy">
+    </div>
 
     <!-- CTA Section -->
     <section class="cta-section">
