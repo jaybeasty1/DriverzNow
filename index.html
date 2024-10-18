@@ -20,7 +20,6 @@
             color: #FFFFFF; /* Crisp White */
             display: flex;
             flex-direction: column;
-            justify-content: center;
             align-items: center;
             min-height: 100vh;
             text-align: center;
@@ -129,6 +128,21 @@
             font-size: 1rem;
         }
 
+        .image-section {
+            position: absolute; /* Position it absolutely */
+            right: 20px; /* Adjust distance from the right */
+            top: 150px; /* Align with the hero section */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align images to the right */
+        }
+
+        .image-section img {
+            width: 150px; /* Set a fixed width */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Space between images */
+        }
+
         @media (max-width: 768px) {
             .hero-section h2 {
                 font-size: 2rem;
@@ -141,6 +155,10 @@
 
             .hero-section .btn {
                 font-size: 1rem;
+            }
+
+            .image-section {
+                right: 10px; /* Adjust for smaller screens */
             }
         }
     </style>
@@ -164,6 +182,13 @@
         <button class="btn" onclick="window.location.href='signup.html';">Sign Up Now</button>
         <button class="btn" onclick="window.location.href='login.html';">Log In</button>
     </section>
+
+    <!-- Image Section -->
+    <div class="image-section">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/rider-experience.jpg" alt="Rider Experience">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/driver-service.jpg" alt="Driver Service">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/hero-image.jpg" alt="Hero Image">
+    </div>
 
     <!-- CTA Section -->
     <section class="cta-section">
