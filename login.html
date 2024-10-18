@@ -7,6 +7,7 @@
     <title>Driverz - Login</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -66,13 +67,32 @@
             color: #FFD700;
         }
 
+        .input-group {
+            position: relative;
+            margin: 10px 0;
+        }
+
+        .input-group i {
+            position: absolute;
+            left: 10px;
+            top: 10px;
+            color: #ccc;
+        }
+
         .login-container input[type="email"],
         .login-container input[type="password"] {
             width: 100%;
-            padding: 10px;
+            padding: 10px 10px 10px 40px; /* Add padding for icon */
             margin: 10px 0;
             border: 1px solid #ccc;
             border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        .login-container input[type="email"]:focus,
+        .login-container input[type="password"]:focus {
+            border-color: #FFD700; /* Change border color on focus */
+            outline: none; /* Remove default outline */
         }
 
         .login-container input[type="submit"] {
@@ -82,21 +102,29 @@
             padding: 10px;
             border-radius: 5px;
             cursor: pointer;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, box-shadow 0.3s;
             width: 100%;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
         }
 
         .login-container input[type="submit"]:hover {
             background-color: #FF2B4A;
         }
 
+        .login-container input[type="submit"]:active {
+            box-shadow: 0 2px 3px rgba(0, 0, 0, 0.3);
+            transform: translateY(2px);
+        }
+
         .navigation {
             margin-top: 15px;
+            text-align: center;
         }
 
         .navigation a {
             color: #FFD700;
             text-decoration: none;
+            display: block;
         }
 
         .navigation a:hover {
@@ -106,6 +134,26 @@
         .role-selection {
             margin: 15px 0;
             color: #FFD700;
+        }
+
+        .social-login {
+            margin-top: 15px;
+        }
+
+        .social-button {
+            width: 100%;
+            background-color: #4285F4; /* Google Blue */
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+        }
+
+        .social-button:hover {
+            background-color: #357AE8; /* Darker shade for hover */
         }
 
         .info-section {
@@ -142,6 +190,16 @@
             color: #002147;
             font-size: 1rem;
         }
+
+        @media (max-width: 600px) {
+            .login-container {
+                width: 90%; /* Use a larger percentage for smaller screens */
+            }
+
+            .info-section {
+                width: 90%; /* Adjust the info section width as well */
+            }
+        }
     </style>
 </head>
 <body>
@@ -157,8 +215,14 @@
     <div class="login-container">
         <h2>Login to Driverz</h2>
         <form action="/login" method="POST">
-            <input type="email" id="email" name="email" placeholder="Enter your email" required>
-            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            <div class="input-group">
+                <i class="fas fa-envelope"></i>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required aria-label="Email address">
+            </div>
+            <div class="input-group">
+                <i class="fas fa-lock"></i>
+                <input type="password" id="password" name="password" placeholder="Enter your password" required aria-label="Password">
+            </div>
 
             <div class="role-selection">
                 <label>
@@ -176,6 +240,11 @@
         <div class="navigation">
             <a href="signup.html">Don't have an account? Sign Up</a>
             <a href="forgot_password.html">Forgot your password?</a>
+        </div>
+
+        <div class="social-login">
+            <button class="social-button">Login with Google</button>
+            <button class="social-button">Login with Facebook</button>
         </div>
     </div>
 
