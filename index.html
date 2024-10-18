@@ -28,7 +28,7 @@
         header {
             background-color: #FFD700; /* Soft Gold */
             width: 100%;
-            padding: 15px;
+            padding: 20px;
             text-align: center;
             position: fixed;
             top: 0;
@@ -38,7 +38,7 @@
 
         header h1 {
             color: #002147; /* Dark Navy */
-            font-size: 1.8rem; /* Adjusted font size for better responsiveness */
+            font-size: 2.2rem;
         }
 
         nav {
@@ -47,7 +47,7 @@
 
         nav a {
             color: #002147;
-            margin: 0 10px; /* Reduced margin for better spacing */
+            margin: 0 15px;
             text-decoration: none;
             font-weight: 600;
         }
@@ -57,45 +57,48 @@
         }
 
         .hero-section {
-            margin-top: 80px; /* Adjusted margin for header */
-            padding: 20px; /* Reduced padding for better spacing */
-            text-align: center; /* Center text */
+            margin-top: 100px;
+            padding: 40px 20px;
         }
 
         .hero-section h2 {
-            font-size: 2rem; /* Adjusted for mobile */
-            margin-bottom: 15px;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
             color: #FFD700; /* Soft Gold */
         }
 
         .hero-section p {
-            font-size: 1rem; /* Adjusted for mobile */
-            margin-bottom: 20px;
+            font-size: 1.2rem;
+            margin-bottom: 40px;
             color: #FFFFFF; /* Crisp White */
         }
 
         .hero-section .btn {
             background-color: #FF6F61; /* Muted Coral */
             color: #FFFFFF;
-            padding: 10px 20px; /* Reduced padding */
+            padding: 15px 30px;
             border: none;
             border-radius: 5px;
-            font-size: 1rem; /* Adjusted for mobile */
+            font-size: 1.2rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin: 5px;
+            margin: 5px; /* Add some space between buttons */
         }
 
         .hero-section .btn:hover {
             background-color: #002147; /* Dark Navy */
         }
 
+        .cta-section {
+            margin: 20px 0;
+        }
+
         .info-section {
             background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
-            padding: 20px;
+            padding: 40px;
             border-radius: 10px;
-            margin: 20px;
-            width: 90%; /* Responsive width */
+            margin: 20px 0;
+            width: 80%;
             max-width: 800px;
         }
 
@@ -107,13 +110,13 @@
         .info-section p {
             margin-bottom: 15px;
             color: #FFFFFF;
-            font-size: 0.9rem; /* Adjusted for mobile */
+            font-size: 1rem;
         }
 
         footer {
             background-color: #FFD700; /* Soft Gold */
             width: 100%;
-            padding: 15px;
+            padding: 20px;
             position: fixed;
             bottom: 0;
             left: 0;
@@ -122,46 +125,48 @@
 
         footer p {
             color: #002147;
-            font-size: 0.9rem; /* Adjusted for mobile */
+            font-size: 1rem;
         }
 
         .image-section {
+            position: absolute;
+            right: 150px; /* Adjusted position */
+            top: 450px; /* Keep the same top position */
             display: flex;
             flex-direction: column;
-            align-items: center;
-            margin: 20px 0; /* Added margin for spacing */
+            align-items: flex-end; /* Align images to the right */
         }
 
         .image-section img {
-            width: 100%; /* Responsive width */
-            max-width: 400px; /* Maintain max size */
+            width: 400px; /* Increased image width */
             height: auto; /* Maintain aspect ratio */
             margin-bottom: 20px; /* Space between images */
         }
 
         .left-image {
-            width: 100%; /* Responsive width */
-            max-width: 400px; /* Maintain max size */
+            position: absolute;
+            left: 50px; /* Adjust as needed */
+            top: 450px; /* Adjust for vertical positioning */
+            width: 400px; /* Set the size */
             height: auto; /* Maintain aspect ratio */
-            margin: 20px 0; /* Added margin for spacing */
         }
 
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.5rem; /* Smaller header font */
-            }
-
             .hero-section h2 {
-                font-size: 1.8rem; /* Smaller hero font */
+                font-size: 2rem;
             }
 
             .hero-section p,
             .info-section p {
-                font-size: 0.9rem; /* Smaller paragraph font */
+                font-size: 1rem;
             }
 
             .hero-section .btn {
-                font-size: 0.9rem; /* Smaller button font */
+                font-size: 1rem;
+            }
+
+            .image-section {
+                right: 10px; /* Adjust for smaller screens */
             }
         }
     </style>
@@ -186,7 +191,7 @@
         <button class="btn" onclick="window.location.href='login.html';">Log In</button>
     </section>
 
-    <!-- Image Section -->
+    <!-- Image Section (Right Side) -->
     <div class="image-section">
         <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/rider-experience.jpg" alt="Rider Experience">
         <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/driver-service.jpg" alt="Driver Service">
@@ -195,12 +200,6 @@
 
     <!-- Left Image Section -->
     <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/display-ride.jpg" alt="Display Ride" class="left-image">
-
-    <!-- New Images Under the Left Image -->
-    <div class="image-section">
-        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/back-end.jpg" alt="Back End">
-        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/family-enjoy.jpg" alt="Family Enjoy">
-    </div>
 
     <!-- CTA Section -->
     <section class="cta-section">
