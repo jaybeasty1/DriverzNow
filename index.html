@@ -16,8 +16,8 @@
         }
 
         body {
-            background-color: #002147;
-            color: #FFFFFF;
+            background-color: #002147; /* Dark Navy */
+            color: #FFFFFF; /* Crisp White */
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -26,7 +26,7 @@
         }
 
         header {
-            background-color: #FFD700;
+            background-color: #FFD700; /* Soft Gold */
             width: 100%;
             padding: 20px;
             text-align: center;
@@ -37,7 +37,7 @@
         }
 
         header h1 {
-            color: #002147;
+            color: #002147; /* Dark Navy */
             font-size: 2.2rem;
         }
 
@@ -64,17 +64,17 @@
         .hero-section h2 {
             font-size: 2.5rem;
             margin-bottom: 20px;
-            color: #FFD700;
+            color: #FFD700; /* Soft Gold */
         }
 
         .hero-section p {
             font-size: 1.2rem;
             margin-bottom: 40px;
-            color: #FFFFFF;
+            color: #FFFFFF; /* Crisp White */
         }
 
         .hero-section .btn {
-            background-color: #FFD700;
+            background-color: #FFD700; /* Soft Gold */
             color: #002147;
             padding: 15px 30px;
             border: none;
@@ -82,11 +82,11 @@
             font-size: 1.2rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin: 5px;
+            margin: 5px; /* Add some space between buttons */
         }
 
         .hero-section .btn:hover {
-            background-color: #FFC107;
+            background-color: #FFC107; /* Lighter Gold */
         }
 
         .cta-section {
@@ -94,7 +94,7 @@
         }
 
         .info-section {
-            background-color: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
             padding: 40px;
             border-radius: 10px;
             margin: 20px 0;
@@ -114,7 +114,7 @@
         }
 
         footer {
-            background-color: #FFD700;
+            background-color: #FFD700; /* Soft Gold */
             width: 100%;
             padding: 20px;
             position: fixed;
@@ -122,7 +122,6 @@
             left: 0;
             text-align: center;
             transition: transform 0.3s ease;
-            transform: translateY(100%);
         }
 
         footer p {
@@ -130,6 +129,45 @@
             font-size: 1rem;
         }
 
+        .image-section {
+            position: absolute;
+            right: 150px; /* Adjusted position */
+            top: 450px; /* Keep the same top position */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align images to the right */
+        }
+
+        .image-section img {
+            width: 400px; /* Increased image width */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Space between images */
+        }
+
+        .left-image {
+            position: absolute;
+            left: 50px; /* Adjust as needed */
+            top: 450px; /* Adjust for vertical positioning */
+            width: 400px; /* Set the size */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .new-images {
+            position: absolute;
+            left: 50px; /* Same left position as the left image */
+            top: 870px; /* Adjust as needed for vertical positioning */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align images to the left */
+        }
+
+        .new-images img {
+            width: 400px; /* Set the size */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 20px; /* Space between images */
+        }
+
+        /* Ride Estimation Section */
         .ride-estimate {
             margin-top: 100px;
             color: #002147;
@@ -157,7 +195,7 @@
         }
 
         .ride-inputs button {
-            background-color: #FFD700;
+            background-color: #FFD700; /* Soft Gold */
             color: #002147;
             padding: 10px 20px;
             border: none;
@@ -168,7 +206,7 @@
         }
 
         .ride-inputs button:hover {
-            background-color: #FFC107;
+            background-color: #FFC107; /* Lighter Gold */
         }
 
         #ride-cost {
@@ -201,6 +239,20 @@
 
             .hero-section .btn {
                 font-size: 1rem;
+            }
+
+            .image-section {
+                right: 10px; /* Adjust for smaller screens */
+            }
+
+            .left-image {
+                width: 100%; /* Adjust left image size for mobile */
+                top: 300px; /* Adjust vertical positioning for mobile */
+            }
+
+            .new-images {
+                left: 10px; /* Adjust for smaller screens */
+                top: 650px; /* Adjust for smaller screens */
             }
 
             .ride-estimate {
@@ -236,14 +288,37 @@
     </section>
 
     <!-- Ride Estimation Section -->
-    <div class="ride-estimate">
+    <section class="ride-estimate">
         <div class="ride-inputs">
+            <h2 style="color: #FFD700;">Estimate Your Ride Cost</h2>
+            <p>Enter your starting point and destination to estimate your ride cost.</p>
+
             <input type="text" id="from" placeholder="From" required>
             <input type="text" id="to" placeholder="To" required>
-            <button onclick="estimateRide()">Estimate Ride</button>
-            <div id="ride-cost"></div>
+            <button onclick="estimateRide()" class="btn">Estimate Ride</button>
+
+            <p id="ride-cost" style="margin-top: 20px; font-size: 1.2rem; font-weight: bold;"></p>
         </div>
-        <div class="ride-map" id="map"></div>
+
+        <div class="ride-map">
+            <div id="map" style="border-radius: 10px;"></div>
+        </div>
+    </section>
+
+    <!-- Image Section (Right Side) -->
+    <div class="image-section">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/rider-experience.jpg" alt="Rider Experience">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/driver-service.jpg" alt="Driver Service">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/hero-image.jpg" alt="Hero Image">
+    </div>
+
+    <!-- Left Image Section -->
+    <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/display-ride.jpg" alt="Display Ride" class="left-image">
+
+    <!-- New Images Under the Left Image -->
+    <div class="new-images">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/back-end.jpg" alt="Back End">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/family-enjoy.jpg" alt="Family Enjoy">
     </div>
 
     <!-- CTA Section -->
@@ -294,6 +369,7 @@
     </section>
 
     <!-- Footer -->
+    <footer>
     <footer id="footer">
         <p>&copy; 2024 DriverzNow. All Rights Reserved.</p>
     </footer>
@@ -307,7 +383,7 @@
         function initMap() {
             directionsService = new google.maps.DirectionsService();
             directionsRenderer = new google.maps.DirectionsRenderer();
-            
+
             map = new google.maps.Map(document.getElementById('map'), {
                 center: { lat: 40.7128, lng: -74.0060 }, // Default to NYC
                 zoom: 12,
@@ -356,23 +432,20 @@
             return totalCost;
         }
 
-        // Hide footer on scroll and show only when scrolled to bottom
+        // Initialize the map once the page is loaded
+        window.onload = initMap;
+        // Hide footer on top and show when scrolled to bottom
         window.addEventListener('scroll', () => {
             const footer = document.getElementById('footer');
             const scrollTop = window.scrollY;
             const documentHeight = document.body.scrollHeight;
             const windowHeight = window.innerHeight;
-
-            // Show footer if scrolled to the bottom, hide otherwise
-            if (scrollTop + windowHeight >= documentHeight - 10) {
-                footer.style.transform = 'translateY(0)'; // Show footer
-            } else {
+            if (scrollTop === 0) {
                 footer.style.transform = 'translateY(100%)'; // Hide footer
+            } else if (scrollTop + windowHeight >= documentHeight) {
+                footer.style.transform = 'translateY(0)'; // Show footer
             }
         });
-
-        // Initialize the map once the page is loaded
-        window.onload = initMap;
     </script>
 
 </body>
