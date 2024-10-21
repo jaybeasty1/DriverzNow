@@ -56,8 +56,119 @@
             text-decoration: underline;
         }
 
+        .hero-section {
+            margin-top: 100px;
+            padding: 40px 20px;
+        }
+
+        .hero-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #FFD700; /* Soft Gold */
+        }
+
+        .hero-section p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            color: #FFFFFF; /* Crisp White */
+        }
+
+        .hero-section .btn {
+            background-color: #FF6F61; /* Muted Coral */
+            color: #FFFFFF;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            margin: 5px; /* Add some space between buttons */
+        }
+
+        .hero-section .btn:hover {
+            background-color: #002147; /* Dark Navy */
+        }
+
+        .cta-section {
+            margin: 20px 0;
+        }
+
+        .info-section {
+            background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+            padding: 40px;
+            border-radius: 10px;
+            margin: 20px 0;
+            width: 80%;
+            max-width: 800px;
+        }
+
+        .info-section h3 {
+            color: #FFD700;
+            margin-bottom: 15px;
+        }
+
+        .info-section p {
+            margin-bottom: 15px;
+            color: #FFFFFF;
+            font-size: 1rem;
+        }
+
+        footer {
+            background-color: #FFD700; /* Soft Gold */
+            width: 100%;
+            padding: 20px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            text-align: center;
+        }
+
+        footer p {
+            color: #002147;
+            font-size: 1rem;
+        }
+
+        .image-section {
+            position: absolute;
+            right: 150px; /* Adjusted position */
+            top: 450px; /* Keep the same top position */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align images to the right */
+        }
+
+        .image-section img {
+            width: 400px; /* Increased image width */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Space between images */
+        }
+
+        .left-image {
+            position: absolute;
+            left: 50px; /* Adjust as needed */
+            top: 450px; /* Adjust for vertical positioning */
+            width: 400px; /* Set the size */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .new-images {
+            position: absolute;
+            left: 50px; /* Same left position as the left image */
+            top: 870px; /* Adjust as needed for vertical positioning */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align images to the left */
+        }
+
+        .new-images img {
+            width: 400px; /* Set the size */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 20px; /* Space between images */
+        }
+
+        /* Ride Estimation Section */
         .ride-estimate {
-            margin-top: 150px;
+            margin-top: 100px;
             background-color: rgba(255, 255, 255, 0.9);
             color: #002147;
             padding: 30px;
@@ -70,7 +181,6 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
-        /* Ride input form section */
         .ride-inputs {
             width: 45%;
         }
@@ -105,7 +215,6 @@
             font-weight: bold;
         }
 
-        /* Map section */
         .ride-map {
             width: 50%;
             height: 300px;
@@ -118,23 +227,44 @@
             height: 100%;
         }
 
-        /* Styling for footer and other content */
-        footer {
-            background-color: #FFD700; /* Soft Gold */
-            width: 100%;
-            padding: 20px;
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            text-align: center;
-        }
+        @media (max-width: 768px) {
+            .hero-section h2 {
+                font-size: 2rem;
+            }
 
-        footer p {
-            color: #002147;
-            font-size: 1rem;
+            .hero-section p,
+            .info-section p {
+                font-size: 1rem;
+            }
+
+            .hero-section .btn {
+                font-size: 1rem;
+            }
+
+            .image-section {
+                right: 10px; /* Adjust for smaller screens */
+            }
+
+            .left-image {
+                width: 100%; /* Adjust left image size for mobile */
+                top: 300px; /* Adjust vertical positioning for mobile */
+            }
+
+            .new-images {
+                left: 10px; /* Adjust for smaller screens */
+                top: 650px; /* Adjust for smaller screens */
+            }
+
+            .ride-estimate {
+                flex-direction: column;
+            }
+
+            .ride-map {
+                width: 100%;
+                height: 300px;
+            }
         }
     </style>
-    <!-- Include Google Maps API -->
     <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&libraries=places"></script>
 </head>
 <body>
@@ -148,6 +278,14 @@
             <a href="#contact">Contact</a>
         </nav>
     </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <h2>Your Journey Starts Here</h2>
+        <p>Welcome to DriverzNow! Whether you're a rider looking for a smooth experience or a driver ready to take on the road, we've got you covered. Join us today!</p>
+        <button class="btn" onclick="window.location.href='signup.html';">Sign Up Now</button>
+        <button class="btn" onclick="window.location.href='login.html';">Log In</button>
+    </section>
 
     <!-- Ride Estimation Section -->
     <section class="ride-estimate">
@@ -167,6 +305,69 @@
         <div class="ride-map">
             <div id="map"></div>
         </div>
+    </section>
+
+    <!-- Image Section (Right Side) -->
+    <div class="image-section">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/rider-experience.jpg" alt="Rider Experience">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/driver-service.jpg" alt="Driver Service">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/hero-image.jpg" alt="Hero Image">
+    </div>
+
+    <!-- Left Image Section -->
+    <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/display-ride.jpg" alt="Display Ride" class="left-image">
+
+    <!-- New Images Under the Left Image -->
+    <div class="new-images">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/back-end.jpg" alt="Back End">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/family-enjoy.jpg" alt="Family Enjoy">
+    </div>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Ride?</h2>
+        <button class="btn" onclick="window.location.href='signup.html';">Get Started</button>
+    </section>
+
+    <!-- Our Services Section -->
+    <section id="services" class="info-section">
+        <h3>Our Services</h3>
+        <p>We offer a wide range of transportation solutions tailored to meet your needs:</p>
+        <ul>
+            <li><strong>Standard Rides:</strong> Quick and reliable rides to get you where you need to go, at affordable rates.</li>
+            <li><strong>Shared Rides:</strong> Save money by sharing your ride with others headed in the same direction.</li>
+            <li><strong>Luxury Rides:</strong> Experience comfort and style with our premium vehicles for special occasions or corporate travel.</li>
+            <li><strong>Airport Transfers:</strong> Convenient transportation to and from airports, ensuring you arrive on time, every time.</li>
+            <li><strong>Eco-Friendly Options:</strong> Choose from our growing fleet of hybrid and electric vehicles to help reduce your carbon footprint.</li>
+        </ul>
+        <p>Our services are designed with flexibility in mind, ensuring that whether you're commuting for work, heading to the airport, or enjoying a night out, we've got the right ride for you.</p>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="info-section">
+        <h3>About Us</h3>
+        <p>At DriverzNow, we are redefining the way people travel. Our ridesharing platform connects passengers with reliable drivers in real-time, making commuting easier and more efficient.</p>
+        <p>Founded on the principles of safety, convenience, and sustainability, we believe that everyone deserves access to reliable transportation. Our state-of-the-art technology ensures that every ride is not only efficient but also secure.</p>
+        <p>Our team is dedicated to continuous improvement, working tirelessly to enhance our services based on user feedback and industry trends. We aim to create a community where riders and drivers can connect seamlessly, fostering relationships built on trust and mutual respect.</p>
+        <p>Join us in transforming the transportation landscape. Experience the DriverzNow difference!</p>
+        <h4>Accepted Payment Methods:</h4>
+        <ul>
+            <li>Credit/Debit Cards (Visa, MasterCard, American Express)</li>
+            <li>PayPal</li>
+            <li>Apple Pay</li>
+            <li>Google Pay</li>
+        </ul>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="info-section">
+        <h3>Contact Us</h3>
+        <form action="/contact" method="POST">
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Your Message" required></textarea>
+            <button type="submit" class="btn">Send Message</button>
+        </form>
     </section>
 
     <!-- Footer -->
