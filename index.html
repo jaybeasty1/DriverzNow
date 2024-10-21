@@ -303,67 +303,31 @@
         </div>
     </section>
 
-    <!-- Image Section (Right Side) -->
+    <!-- Image Section -->
     <div class="image-section">
-        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/rider-experience.jpg" alt="Rider Experience">
-        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/driver-service.jpg" alt="Driver Service">
-        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/hero-image.jpg" alt="Hero Image">
+        <img src="image1.png" alt="Driver Image 1">
+        <img src="image2.png" alt="Driver Image 2">
     </div>
 
-    <!-- Left Image Section -->
-    <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/display-ride.jpg" alt="Display Ride" class="left-image">
-
-    <!-- New Images Under the Left Image -->
     <div class="new-images">
-        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/back-end.jpg" alt="Back End">
-        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/family-enjoy.jpg" alt="Family Enjoy">
+        <img src="new_image1.png" alt="New Image 1">
+        <img src="new_image2.png" alt="New Image 2">
     </div>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <h2>Ready to Ride?</h2>
-        <button class="btn" onclick="window.location.href='signup.html';">Get Started</button>
-    </section>
-
-    <!-- Our Services Section -->
-    <section id="services" class="info-section">
-        <h3>Our Services</h3>
-        <p>We offer a wide range of transportation solutions tailored to meet your needs:</p>
-        <ul>
-            <li><strong>Standard Rides:</strong> Quick and reliable rides to get you where you need to go, at affordable rates.</li>
-            <li><strong>Shared Rides:</strong> Save money by sharing your ride with others headed in the same direction.</li>
-            <li><strong>Luxury Rides:</strong> Experience comfort and style with our premium vehicles for special occasions or corporate travel.</li>
-            <li><strong>Airport Transfers:</strong> Convenient transportation to and from airports, ensuring you arrive on time, every time.</li>
-            <li><strong>Eco-Friendly Options:</strong> Choose from our growing fleet of hybrid and electric vehicles to help reduce your carbon footprint.</li>
-        </ul>
-        <p>Our services are designed with flexibility in mind, ensuring that whether you're commuting for work, heading to the airport, or enjoying a night out, we've got the right ride for you.</p>
-    </section>
-
-    <!-- About Section -->
-    <section id="about" class="info-section">
+    <!-- Info Section -->
+    <section class="info-section" id="about">
         <h3>About Us</h3>
-        <p>At DriverzNow, we are redefining the way people travel. Our ridesharing platform connects passengers with reliable drivers in real-time, making commuting easier and more efficient.</p>
-        <p>Founded on the principles of safety, convenience, and sustainability, we believe that everyone deserves access to reliable transportation. Our state-of-the-art technology ensures that every ride is not only efficient but also secure.</p>
-        <p>Our team is dedicated to continuous improvement, working tirelessly to enhance our services based on user feedback and industry trends. We aim to create a community where riders and drivers can connect seamlessly, fostering relationships built on trust and mutual respect.</p>
-        <p>Join us in transforming the transportation landscape. Experience the DriverzNow difference!</p>
-        <h4>Accepted Payment Methods:</h4>
-        <ul>
-            <li>Credit/Debit Cards (Visa, MasterCard, American Express)</li>
-            <li>PayPal</li>
-            <li>Apple Pay</li>
-            <li>Google Pay</li>
-        </ul>
+        <p>At DriverzNow, we prioritize safety and comfort for all our users. Our team is dedicated to providing top-notch services and ensuring a smooth ride for everyone.</p>
     </section>
 
-    <!-- Contact Section -->
-    <section id="contact" class="info-section">
+    <section class="info-section" id="services">
+        <h3>Our Services</h3>
+        <p>We offer a variety of services to cater to your travel needs, including regular rides, premium options, and group travel. Explore our app to learn more!</p>
+    </section>
+
+    <section class="info-section" id="contact">
         <h3>Contact Us</h3>
-        <form action="/contact" method="POST">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Your Email" required>
-            <textarea placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn">Send Message</button>
-        </form>
+        <p>If you have any questions or concerns, feel free to reach out through our contact form or email us at support@driverznow.com.</p>
     </section>
 
     <!-- Footer -->
@@ -372,79 +336,26 @@
     </footer>
 
     <script>
-        let map;
-        let directionsService;
-        let directionsRenderer;
-
-        // Initialize the map
-        function initMap() {
-            directionsService = new google.maps.DirectionsService();
-            directionsRenderer = new google.maps.DirectionsRenderer();
-
-            map = new google.maps.Map(document.getElementById('map'), {
-                center: { lat: 40.7128, lng: -74.0060 }, // Default to NYC
-                zoom: 12,
-            });
-
-            directionsRenderer.setMap(map);
-        }
-
-        // Estimate ride and display route
         function estimateRide() {
-            const from = document.getElementById('from').value;
-            const to = document.getElementById('to').value;
-            if (!from || !to) {
-                document.getElementById('ride-cost').innerText = "Please fill both fields!";
-                return;
-            }
+            var from = document.getElementById('from').value;
+            var to = document.getElementById('to').value;
+            var rideCostElement = document.getElementById('ride-cost');
 
-            directionsService.route({
-                origin: from,
-                destination: to,
-                travelMode: 'DRIVING'
-            }, (response, status) => {
-                if (status === 'OK') {
-                    directionsRenderer.setDirections(response);
-                    const distance = response.routes[0].legs[0].distance.value / 1000; // distance in km
-                    const duration = response.routes[0].legs[0].duration.value / 60; // duration in minutes
-                    const cost = calculateCost(distance, duration);
+            if (from && to) {
+                // For demonstration purposes, let's say the ride cost is a fixed value.
+                rideCostElement.innerText = "Estimated Ride Cost: $20.00"; // Placeholder value
 
-                    document.getElementById('ride-cost').innerText = `Estimated Cost: $${cost.toFixed(2)}`;
-                } else {
-                    document.getElementById('ride-cost').innerText = "Unable to estimate ride!";
-                }
-            });
-        }
+                // Initialize the map and set the center to a default location
+                var map = new google.maps.Map(document.getElementById('map'), {
+                    center: { lat: 37.7749, lng: -122.4194 }, // San Francisco
+                    zoom: 12,
+                });
 
-        // Basic cost calculation based on distance and time
-        function calculateCost(distance, duration) {
-            const baseFare = 2.50;  // Base fare in $
-            const costPerKm = 1.20; // Cost per kilometer
-            const costPerMinute = 0.30; // Cost per minute of travel
-
-            const distanceCost = distance * costPerKm;
-            const timeCost = duration * costPerMinute;
-            const totalCost = baseFare + distanceCost + timeCost;
-
-            return totalCost;
-        }
-
-        // Initialize the map once the page is loaded
-        window.onload = initMap;
-
-        // Show footer when scrolled to bottom
-        window.addEventListener('scroll', () => {
-            const footer = document.querySelector('footer');
-            const scrollTop = window.scrollY;
-            const documentHeight = document.body.scrollHeight;
-            const windowHeight = window.innerHeight;
-            if (scrollTop + windowHeight >= documentHeight) {
-                footer.style.display = 'block'; // Show footer
+                // You can add additional logic here to display the route from 'from' to 'to'
             } else {
-                footer.style.display = 'none'; // Hide footer
+                rideCostElement.innerText = "Please enter both locations.";
             }
-        });
+        }
     </script>
-
 </body>
 </html>
