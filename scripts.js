@@ -4,9 +4,15 @@ document.getElementById('signup-form')?.addEventListener('submit', async (e) => 
     
     // Grab values from the signup form
     const name = document.getElementById('name').value;
-    const email = document.getElementById('signup-email').value;  // Updated ID
-    const password = document.getElementById('signup-password').value;  // Updated ID
-    const role = document.getElementById('role').value;  // Ensure this exists
+    const email = document.getElementById('signup-email').value;
+    const password = document.getElementById('signup-password').value;
+    const role = document.getElementById('role').value;
+
+    // Basic validation
+    if (!name || !email || !password || !role) {
+        alert('Please fill in all fields.');
+        return;
+    }
 
     try {
         const response = await fetch('/signup', {
@@ -34,8 +40,14 @@ document.getElementById('login-form')?.addEventListener('submit', async (e) => {
     e.preventDefault();
     
     // Grab values from the login form
-    const email = document.getElementById('login-email').value;  // Updated ID
-    const password = document.getElementById('login-password').value;  // Updated ID
+    const email = document.getElementById('login-email').value;
+    const password = document.getElementById('login-password').value;
+
+    // Basic validation
+    if (!email || !password) {
+        alert('Please enter both email and password.');
+        return;
+    }
 
     try {
         const response = await fetch('/login', {
