@@ -289,21 +289,19 @@
 
     <!-- Ride Estimation Section -->
     <section class="ride-estimate">
-        <!-- Ride Input Form -->
         <div class="ride-inputs">
-            <h2>Estimate Your Ride Cost</h2>
+            <h2 style="color: #FFD700;">Estimate Your Ride Cost</h2>
             <p>Enter your starting point and destination to estimate your ride cost.</p>
 
-            <input type="text" id="from" placeholder="From">
-            <input type="text" id="to" placeholder="To">
-            <button onclick="estimateRide()">Estimate Ride</button>
+            <input type="text" id="from" placeholder="From" required>
+            <input type="text" id="to" placeholder="To" required>
+            <button onclick="estimateRide()" class="btn">Estimate Ride</button>
 
-            <p id="ride-cost"></p>
+            <p id="ride-cost" style="margin-top: 20px; font-size: 1.2rem; font-weight: bold;"></p>
         </div>
 
-        <!-- Map Display -->
         <div class="ride-map">
-            <div id="map"></div>
+            <div id="map" style="border-radius: 10px;"></div>
         </div>
     </section>
 
