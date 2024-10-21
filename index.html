@@ -38,7 +38,7 @@
 
         header h1 {
             color: #002147; /* Dark Navy */
-            font-size: 2rem;
+            font-size: 2.2rem;
         }
 
         nav {
@@ -57,10 +57,8 @@
         }
 
         .hero-section {
-            margin-top: 120px;
+            margin-top: 100px;
             padding: 40px 20px;
-            text-align: center;
-            width: 100%;
         }
 
         .hero-section h2 {
@@ -84,25 +82,15 @@
             font-size: 1.2rem;
             cursor: pointer;
             transition: background-color 0.3s ease;
-            margin: 5px;
+            margin: 5px; /* Add some space between buttons */
         }
 
         .hero-section .btn:hover {
             background-color: #002147; /* Dark Navy */
         }
 
-        .image-section {
+        .cta-section {
             margin: 20px 0;
-            width: 100%;
-            display: flex;
-            justify-content: space-around;
-            flex-wrap: wrap;
-        }
-
-        .image-section img {
-            width: 30%;
-            height: auto;
-            margin-bottom: 20px;
         }
 
         .info-section {
@@ -110,7 +98,7 @@
             padding: 40px;
             border-radius: 10px;
             margin: 20px 0;
-            width: 90%;
+            width: 80%;
             max-width: 800px;
         }
 
@@ -119,11 +107,10 @@
             margin-bottom: 15px;
         }
 
-        .info-section p, .info-section ul {
+        .info-section p {
+            margin-bottom: 15px;
             color: #FFFFFF;
             font-size: 1rem;
-            margin-bottom: 15px;
-            text-align: left;
         }
 
         footer {
@@ -141,16 +128,51 @@
             font-size: 1rem;
         }
 
-        @media (max-width: 768px) {
-            header h1 {
-                font-size: 1.5rem;
-            }
+        .image-section {
+            position: absolute;
+            right: 150px; /* Adjusted position */
+            top: 450px; /* Keep the same top position */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end; /* Align images to the right */
+        }
 
+        .image-section img {
+            width: 400px; /* Increased image width */
+            height: auto; /* Maintain aspect ratio */
+            margin-bottom: 20px; /* Space between images */
+        }
+
+        .left-image {
+            position: absolute;
+            left: 50px; /* Adjust as needed */
+            top: 450px; /* Adjust for vertical positioning */
+            width: 400px; /* Set the size */
+            height: auto; /* Maintain aspect ratio */
+        }
+
+        .new-images {
+            position: absolute;
+            left: 50px; /* Same left position as the left image */
+            top: 870px; /* Adjust as needed for vertical positioning */
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start; /* Align images to the left */
+        }
+
+        .new-images img {
+            width: 400px; /* Set the size */
+            height: auto; /* Maintain aspect ratio */
+            margin-top: 20px; /* Space between images */
+        }
+
+        @media (max-width: 768px) {
             .hero-section h2 {
                 font-size: 2rem;
             }
 
-            .hero-section p, .info-section p {
+            .hero-section p,
+            .info-section p {
                 font-size: 1rem;
             }
 
@@ -158,24 +180,18 @@
                 font-size: 1rem;
             }
 
-            .image-section img {
-                width: 100%;
-                max-width: 400px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero-section h2 {
-                font-size: 1.8rem;
+            .image-section {
+                right: 10px; /* Adjust for smaller screens */
             }
 
-            .hero-section .btn {
-                padding: 10px 20px;
+            .left-image {
+                width: 100%; /* Adjust left image size for mobile */
+                top: 300px; /* Adjust vertical positioning for mobile */
             }
 
-            .image-section img {
-                width: 100%;
-                margin: 10px 0;
+            .new-images {
+                left: 10px; /* Adjust for smaller screens */
+                top: 650px; /* Adjust for smaller screens */
             }
         }
     </style>
@@ -200,11 +216,20 @@
         <button class="btn" onclick="window.location.href='login.html';">Log In</button>
     </section>
 
-    <!-- Image Section -->
+    <!-- Image Section (Right Side) -->
     <div class="image-section">
         <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/rider-experience.jpg" alt="Rider Experience">
         <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/driver-service.jpg" alt="Driver Service">
         <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/main/hero-image.jpg" alt="Hero Image">
+    </div>
+
+    <!-- Left Image Section -->
+    <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/display-ride.jpg" alt="Display Ride" class="left-image">
+
+    <!-- New Images Under the Left Image -->
+    <div class="new-images">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/back-end.jpg" alt="Back End">
+        <img src="https://raw.githubusercontent.com/jaybeasty1/DriverzNow/refs/heads/main/family-enjoy.jpg" alt="Family Enjoy">
     </div>
 
     <!-- CTA Section -->
@@ -216,6 +241,7 @@
     <!-- Our Services Section -->
     <section id="services" class="info-section">
         <h3>Our Services</h3>
+        <p>We offer a wide range of transportation solutions tailored to meet your needs:</p>
         <ul>
             <li><strong>Standard Rides:</strong> Quick and reliable rides to get you where you need to go, at affordable rates.</li>
             <li><strong>Shared Rides:</strong> Save money by sharing your ride with others headed in the same direction.</li>
@@ -223,6 +249,7 @@
             <li><strong>Airport Transfers:</strong> Convenient transportation to and from airports, ensuring you arrive on time, every time.</li>
             <li><strong>Eco-Friendly Options:</strong> Choose from our growing fleet of hybrid and electric vehicles to help reduce your carbon footprint.</li>
         </ul>
+        <p>Our services are designed with flexibility in mind, ensuring that whether you're commuting for work, heading to the airport, or enjoying a night out, we've got the right ride for you.</p>
     </section>
 
     <!-- About Section -->
@@ -230,6 +257,8 @@
         <h3>About Us</h3>
         <p>At DriverzNow, we are redefining the way people travel. Our ridesharing platform connects passengers with reliable drivers in real-time, making commuting easier and more efficient.</p>
         <p>Founded on the principles of safety, convenience, and sustainability, we believe that everyone deserves access to reliable transportation. Our state-of-the-art technology ensures that every ride is not only efficient but also secure.</p>
+        <p>Our team is dedicated to continuous improvement, working tirelessly to enhance our services based on user feedback and industry trends. We aim to create a community where riders and drivers can connect seamlessly, fostering relationships built on trust and mutual respect.</p>
+        <p>Join us in transforming the transportation landscape. Experience the DriverzNow difference!</p>
         <h4>Accepted Payment Methods:</h4>
         <ul>
             <li>Credit/Debit Cards (Visa, MasterCard, American Express)</li>
